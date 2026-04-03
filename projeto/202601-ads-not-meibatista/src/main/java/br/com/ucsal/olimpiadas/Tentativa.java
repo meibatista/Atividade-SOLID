@@ -4,11 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Tentativa {
+
 	private long id;
 	private long participanteId;
 	private long provaId;
 
-	private final List<Resposta> respostas = new ArrayList<>();
+	private List<Resposta> respostas;
+
+	public Tentativa() {
+		this.respostas = new ArrayList<>();
+	}
 
 	public long getId() {
 		return id;
@@ -38,4 +43,10 @@ public class Tentativa {
 		return respostas;
 	}
 
+	// método novo (importante)
+	public void adicionarResposta(Resposta resposta) {
+		if (resposta != null) {
+			this.respostas.add(resposta);
+		}
+	}
 }
